@@ -1,2 +1,6 @@
+/home/reepoo0528/my-batch-project/src/main/java/com/example/batch/StepResult.java
 /home/reepoo0528/my-batch-project/src/main/java/com/example/batch/DatabaseManager.java
+/home/reepoo0528/my-batch-project/src/main/java/com/example/batch/CSVImportStep.java
+/home/reepoo0528/my-batch-project/src/main/java/com/example/batch/JobStep.java
 /home/reepoo0528/my-batch-project/src/main/java/com/example/batch/App.java
+/home/reepoo0528/my-batch-project/src/main/java/com/example/batch/JobRunner.java

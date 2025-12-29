@@ -47,4 +47,20 @@ public class DatabaseManager {
             e.printStackTrace();
         }
     }
+
+    // job_execution レコードを挿入（トランザクションは呼び出し側で管理）
+    public static void insertJobExecution(Connection conn, String jobName, String status,
+            java.sql.Timestamp startTime, java.sql.Timestamp endTime, String message, int recordCount)
+            throws SQLException {
+        String insertSql = "INSERT INTO job_execution (job_name, status, start_time, end_time, message, record_count) VALUES (?, ?, ?, ?, ?, ?)";
+        try (java.sql.PreparedStatement ps = conn.prepareStatement(insertSql)) {
+            ps.setString(1, jobName);
+            ps.setString(2, status);
+            ps.setTimestamp(3, startTime);
+            ps.setTimestamp(4, endTime);
+            ps.setString(5, message);
+            ps.setInt(6, recordCount);
+            ps.executeUpdate();
+        }
+    }
 }
