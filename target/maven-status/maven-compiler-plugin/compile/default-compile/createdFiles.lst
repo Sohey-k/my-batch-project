@@ -1,3 +1,4 @@
 com/example/batch/App.class
+com/example/batch/DatabaseManager.class
 com/example/batch/JobStep.class
 com/example/batch/JobRunner.class
