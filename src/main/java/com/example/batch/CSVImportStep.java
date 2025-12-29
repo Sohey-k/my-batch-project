@@ -24,7 +24,7 @@ public class CSVImportStep implements JobStep {
         try {
             if (!Files.exists(csvPath)) {
                 // サンプル CSV を作成
-                List<String> sample = List.of("id,name","1,Alice","2,Bob","3,Carol");
+                List<String> sample = List.of("id,name", "1,Alice", "2,Bob", "3,Carol");
                 Files.write(csvPath, sample, StandardCharsets.UTF_8);
             }
 
@@ -32,7 +32,8 @@ public class CSVImportStep implements JobStep {
             int count = Math.max(0, lines.size() - 1); // ヘッダを除いた件数
 
             // 例として読み込んだデータを一時テーブルに挿入する（任意）
-            try (PreparedStatement ps = conn.prepareStatement("CREATE TABLE IF NOT EXISTS imported_data (id INT, name VARCHAR(255))")) {
+            try (PreparedStatement ps = conn
+                    .prepareStatement("CREATE TABLE IF NOT EXISTS imported_data (id INT, name VARCHAR(255))")) {
                 ps.execute();
             }
 

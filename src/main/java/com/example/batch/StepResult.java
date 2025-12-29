@@ -1,7 +1,9 @@
 package com.example.batch;
 
 public class StepResult {
-    public enum Status { SUCCESS, FAILURE }
+    public enum Status {
+        SUCCESS, FAILURE
+    }
 
     private final Status status;
     private final String message;

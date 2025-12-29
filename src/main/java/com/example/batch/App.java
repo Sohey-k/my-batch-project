@@ -10,11 +10,11 @@ public class App {
         // DB 初期化
         DatabaseManager.createJobExecutionTable();
 
-        // ジョブのステップを構築
-        CSVImportStep csvStep = new CSVImportStep("CSVインポート", Path.of("data/sample.csv"));
+        // ジョブのステップを構築（最初はダミーでログ出力するステップ）
+        LoggingStep dummy = new LoggingStep("ダミーステップ");
 
         JobRunner runner = new JobRunner("sample-job");
-        runner.run(List.of(csvStep));
+        runner.run(List.of(dummy));
 
         System.out.println("バッチ処理が完了しました。");
     }
