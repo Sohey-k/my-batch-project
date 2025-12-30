@@ -1,0 +1,53 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Job Executions</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 6px;
+            text-align: left;
+        }
+
+        th {
+            background: #f0f0f0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Job Executions</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Job Name</th>
+                <th>Status</th>
+                <th>Start Time</th>
+                <th>End Time</th>
+                <th>Record Count</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="e : ${executions}">
+                <td th:text="${e.jobName}">job</td>
+                <td th:text="${e.status}">status</td>
+                <td th:text="${e.startTime}">start</td>
+                <td th:text="${e.endTime}">end</td>
+                <td th:text="${e.recordCount}">0</td>
+            </tr>
+            <tr th:if="${executions.size()} == 0">
+                <td colspan="5">No executions found.</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
