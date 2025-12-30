@@ -1,6 +1,5 @@
 package com.example.batch;
 
-import java.nio.file.Path;
 import java.util.List;
 
 public class App {
